@@ -1,3 +1,15 @@
+'''
+-*- coding: utf-8 -*-
+parks_provision_18.py
+Richard Magala, rmagala@iastate.edu
+November 14, 2022
+This program checks whether a specified package is loaded or is with the python excutable path
+if the package is not loaded, it is installed. Then, imported if it is not imported successfully that means it was not installed, the program will exit
+The program was tested on python version Version- 3.9.11 in windows
+
+'''
+
+
 import subprocess
 import sys
 import importlib
@@ -21,7 +33,7 @@ for pkg in ['xmltodict', 'urllib', 'scipy', 'pandas', 'numpy', 'requests', 'wins
     try:
       globals()[pkg] = importlib.import_module(pkg)
     # print the success
-      print(f'{pkg} originally not install has been imported successfully')
+      print(f'{pkg} originally not installed has been imported successfully')
     except ModuleNotFoundError:
       print(f'Package {pkg} was not installed successfully or is not suppored, Exiting the program........')
       sys.exit(1)
