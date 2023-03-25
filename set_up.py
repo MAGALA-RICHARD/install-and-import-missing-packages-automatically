@@ -10,6 +10,8 @@ def check_if_package_Loaded(package):
     value = True
     return value
 # check if the package is loaded, then install it
+# This is just an example some of these packages are part of the python standard library but this depends on which version of python you are using
+# Any package not found in the excutable path will be installed and tested for successfully being installed by trying to import it
 for pkg in ['xmltodict', 'urllib', 'scipy', 'pandas', 'numpy', 'requests', 'winsound', 'platform']:
   if check_if_package_Loaded(pkg) !=True:
     # the safest way to install a package inside a script is to use the subprocess module
